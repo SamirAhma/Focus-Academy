@@ -3,14 +3,16 @@ import { useLocation, useNavigate } from "react-router-dom";
 const Navbar = () => {
   const navigate = useNavigate();
   const pathname = useLocation().pathname;
-
-  return (
-    <>
-      <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5  dark:bg-gray-900">
-        <div className="container flex flex-wrap items-center justify-end  mx-auto">
-          <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-            <ul className="flex flex-col p-4 mt-4 border border-gray-100  bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-              {pathname == "/home" ? (
+  if (pathname == "/home") {
+    return (
+      <>
+        <nav className=" px-2 sm:px-4 py-2.5  bg-gray-900">
+          <div className="container flex flex-wrap items-center justify-end  mx-auto">
+            <div
+              className="hidden w-full md:block md:w-auto"
+              id="navbar-default"
+            >
+              <ul className="flex flex-col p-4 mt-4 border border-gray-100   md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 bg-gray-90">
                 <li>
                   <button
                     onClick={() => {
@@ -23,15 +25,15 @@ const Navbar = () => {
                     Logout
                   </button>
                 </li>
-              ) : (
-                ""
-              )}
-            </ul>
+              </ul>
+            </div>
           </div>
-        </div>
-      </nav>
-    </>
-  );
+        </nav>
+      </>
+    );
+  } else {
+    return <></>;
+  }
 };
 
 export default Navbar;
