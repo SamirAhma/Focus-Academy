@@ -108,7 +108,7 @@ function App() {
     </Layer>
   );
 
-  return <>{isSubmitted ? <Navigate to="/home" replace /> : renderForm}</>;
+  return <>{isSubmitted ? <Navigate to="/" replace /> : renderForm}</>;
 }
 
 export default App;

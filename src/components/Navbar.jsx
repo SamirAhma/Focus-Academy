@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 const Navbar = () => {
   const navigate = useNavigate();
   const pathname = useLocation().pathname;
-  if (pathname == "/home") {
+  if (pathname == "/") {
     return (
       <>
         <nav className=" px-2 sm:px-4 py-2.5  bg-gray-900">

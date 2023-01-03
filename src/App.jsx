@@ -9,7 +9,7 @@ import Test from "./pages/test2";
 const user = JSON.parse(localStorage.getItem("user"));
 const router = createBrowserRouter([
   {
-    path: "/home",
+    path: "/",
     element: (
       <PrivateRoute>
         <Home />
@@ -19,14 +19,6 @@ const router = createBrowserRouter([
   {
     path: "/test",
     element: <Test />,
-  },
-  {
-    path: "/",
-    element: (
-      <PrivateRoute>
-        <Home />
-      </PrivateRoute>
-    ),
   },
   {
     path: "/login",
